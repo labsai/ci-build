@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: docker:1.13.1-git
+    working_directory: ~/
+    steps:
+      - checkout
+      - setup_remote_docker
+
+      - run: |
+          docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+
+          docker build -t labsai/ui-build:b$CIRCLE_BUILD_NUM .
+          docker push labsai/ui-build:b$CIRCLE_BUILD_NUM
+
+          docker build -t labsai/ui-build:latest .
+          docker push labsai/ui-build:latest
