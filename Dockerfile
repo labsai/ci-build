@@ -1,4 +1,4 @@
-FROM maven:3.3-jdk-8
+FROM maven:3.3-jdk-8-alpine
 
 RUN apk add --no-cache \
 		ca-certificates \
