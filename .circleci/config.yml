@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: docker:17-git
-    working_directory: ~/
+    working_directory: ~/ui-build/
     steps:
       - checkout
       - setup_remote_docker
