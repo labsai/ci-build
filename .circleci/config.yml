@@ -3,16 +3,15 @@ jobs:
   build:
     docker:
       - image: docker:17-git
-    working_directory: ~/ui-build/
+    working_directory: ~/ci-build/
     steps:
       - checkout
-      - setup_remote_docker
 
       - run: |
-          docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+          docker login -u $DOCKER_USER -p $DOCKER_PASS
 
-          docker build -t labsai/ui-build:b$CIRCLE_BUILD_NUM .
-          docker push labsai/ui-build:b$CIRCLE_BUILD_NUM
+          docker build -t labsai/ci-build:b$CIRCLE_BUILD_NUM .
+          docker push labsai/ci-build:b$CIRCLE_BUILD_NUM
 
-          docker build -t labsai/ui-build:latest .
-          docker push labsai/ui-build:latest
+          docker build -t labsai/ci-build:latest .
+          docker push labsai/ci-build:latest
