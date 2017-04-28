@@ -6,6 +6,7 @@ jobs:
     working_directory: ~/ci-build/
     steps:
       - checkout
+      - setup_remote_docker
 
       - run: |
           docker login -u $DOCKER_USER -p $DOCKER_PASS
