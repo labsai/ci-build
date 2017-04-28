@@ -18,8 +18,6 @@ RUN set -x \
 	&& rm docker.tgz \
 	&& docker -v
 
-COPY docker-entrypoint.sh /usr/local/bin/
-
 RUN apk add --no-cache py-pip
 RUN pip install docker-compose
 
