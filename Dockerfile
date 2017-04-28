@@ -20,6 +20,7 @@ RUN set -x \
 
 RUN apk add --no-cache py-pip
 RUN pip install docker-compose
+RUN service docker start
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["sh"]
