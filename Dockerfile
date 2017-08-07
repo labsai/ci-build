@@ -13,7 +13,7 @@ RUN set -x \
 	&& rm docker.tgz \
 	&& docker -v
 
-RUN apk add --no-cache py-pip
+RUN apk-get install py-pip
 RUN pip install docker-compose
 
 ENTRYPOINT ["docker-entrypoint.sh"]
