@@ -2,9 +2,11 @@ FROM maven:3.5-jdk-8-alpine
 
 RUN apk add --no-cache \
 		ca-certificates \
+		ssh \
 		curl \
 		openssl \
-		py-pip
+		py-pip \
+		git \
 
 ENV DOCKER_BUCKET get.docker.com
 ENV DOCKER_VERSION 17.04.0-ce
