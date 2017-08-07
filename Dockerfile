@@ -1,9 +1,4 @@
-FROM maven:3.5-jdk-8-alpine
-
-RUN apk add --no-cache \
-		ca-certificates \
-		curl \
-		openssl
+FROM maven:3.5-jdk-8
 
 ENV DOCKER_BUCKET get.docker.com
 ENV DOCKER_VERSION 17.04.0-ce
