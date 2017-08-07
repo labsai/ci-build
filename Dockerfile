@@ -7,7 +7,7 @@ RUN apk --update add --no-cache \
 		py-pip \
 		bash \
 		git \
-		openssh
+		openssh && rm -rf /var/cache/apk/*
 
 ENV DOCKER_BUCKET get.docker.com
 ENV DOCKER_VERSION 17.04.0-ce
