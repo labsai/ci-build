@@ -5,8 +5,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		curl \
 		bash \
 		git \
-		tar \
-		openssh && rm -rf /var/cache/apk/*
+		tar  && rm -rf /var/cache/apk/*
 
 ENV DOCKER_BUCKET download.docker.com
 ENV DOCKER_VERSION 18.06.1-ce
