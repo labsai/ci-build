@@ -22,6 +22,9 @@ RUN set -x \
 	&& rm docker.tgz \
 	&& docker -v
 
+
+RUN pip install --upgrade setuptools
+
 RUN pip install docker-compose
 
 ENTRYPOINT ["docker-entrypoint.sh"]
