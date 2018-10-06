@@ -1,4 +1,4 @@
-FROM maven:3.5-jdk-11-slim
+FROM maven:3.5-jdk-11
 
 RUN apk --update add --no-cache \
 		ca-certificates \
