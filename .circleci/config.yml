@@ -9,7 +9,7 @@ jobs:
       - setup_remote_docker
 
       - run: |
-          docker login -username $DOCKER_USER --password-stdin $DOCKER_PASS
+          docker login -u $DOCKER_USER -p $DOCKER_PASS
 
           docker build -t labsai/ci-build:b$CIRCLE_BUILD_NUM .
           docker push labsai/ci-build:b$CIRCLE_BUILD_NUM
