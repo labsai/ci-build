@@ -1,6 +1,6 @@
 FROM maven:3.5-jdk-11
 
-RUN apk --update add --no-cache \
+RUN apk-get update && apt-get install -y --no-install-recommends \
 		ca-certificates \
 		curl \
 		openssl \
