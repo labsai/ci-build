@@ -1,8 +1,10 @@
 FROM maven:3.5-jdk-11
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
+		apt-utils \
 		ca-certificates \
 		curl \
+		python-pip \
 		bash \
 		git \
 		tar  && rm -rf /var/cache/apk/*
