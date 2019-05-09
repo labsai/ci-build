@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk12:jdk-12.0.1_12-slim
+FROM adoptopenjdk/openjdk12:jdk-12.0.1.12
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		apt-utils \
@@ -22,6 +22,7 @@ RUN mkdir -p /usr/share/maven /usr/share/maven/ref \
   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1 \
   && rm -f /tmp/apache-maven.tar.gz \
   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+  && echo JAVA_HOME
 
 ENV MAVEN_HOME /usr/share/maven
 ENV MAVEN_CONFIG "$USER_HOME_DIR/.m2"
