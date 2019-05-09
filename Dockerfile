@@ -1,4 +1,4 @@
-FROM maven:3.5-jdk-11
+FROM maven:3.6.1-jdk-12
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		apt-utils \
@@ -10,8 +10,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		tar  && rm -rf /var/cache/apk/*
 
 ENV DOCKER_BUCKET download.docker.com
-ENV DOCKER_VERSION 18.06.1-ce
-ENV DOCKER_SHA256 83be159cf0657df9e1a1a4a127d181725a982714a983b2bdcc0621244df93687
+ENV DOCKER_VERSION 18.09.6
+ENV DOCKER_SHA256 1f3f6774117765279fce64ee7f76abbb5f260264548cf80631d68fb2d795bb09
 
 RUN set -x \
 	&& curl -fSL "https://${DOCKER_BUCKET}/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz" -o docker.tgz \
