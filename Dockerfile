@@ -32,8 +32,8 @@ COPY settings-docker.xml /usr/share/maven/ref/
 # install docker
 
 ENV DOCKER_BUCKET download.docker.com
-ENV DOCKER_VERSION 18.09.6
-ENV DOCKER_SHA256 1f3f6774117765279fce64ee7f76abbb5f260264548cf80631d68fb2d795bb09
+ENV DOCKER_VERSION 19.03.1
+ENV DOCKER_SHA256 021de036f36d3e5c9ba5dd832276c51ea0f9ed413eab075016812bf70c046319
 
 RUN set -x \
 	&& curl -fSL "https://${DOCKER_BUCKET}/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz" -o docker.tgz \
